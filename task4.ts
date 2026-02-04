@@ -3,4 +3,17 @@
 
 const array: string[] = ["orange", "apple", "banana", "apple", "orange", "orange"];
 
-const result: Record<string, number> = { orange: 3, apple: 2, banana: 1 };
+//const result: Record<string, number> = { orange: 3, apple: 2, banana: 1 };
+
+function parseArray(arr: string[]) {
+  const result: Record<string, number> = {};
+  for (const value of arr) {
+    if (result[value]) {
+      result[value]++;
+    } else {
+      result[value] = 1;
+    }
+  }
+  return result;
+}
+console.log(parseArray(array));
